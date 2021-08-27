@@ -1,0 +1,27 @@
+[
+    {
+      "first_name": "Nicholas",
+      "last_name": "Cougan",
+      "email": "ncougan@gmail.com",
+      "password": "123456789"
+    },
+    {
+        "first_name": "Franziska",
+        "last_name": "Alf",
+        "email": "franziska@gmail.com",
+        "password": "123456789"
+    },
+    {
+        "first_name": "Julian",
+        "last_name": "Cougan",
+        "email": "julian@gmail.com",
+        "password": "123456789"
+    },
+    {
+        "first_name": "Hayley",
+        "last_name": "Moran",
+        "email": "Hayley@gmail.com",
+        "password": "123456789"
+    }
+  ]
+  

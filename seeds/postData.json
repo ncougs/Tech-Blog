@@ -1,0 +1,22 @@
+[
+    {
+        "title": "Welcome to my first blog post",
+        "body": "Today is a good day",
+        "user_id": 1
+    },
+    {
+        "title": "Welcome!",
+        "body": "My name is Franziska, I go type type type type type.",
+        "user_id": 2
+    },
+    {
+        "title": "Hello",
+        "body": "Hi, I'm Julian",
+        "user_id": 3
+    },
+    {
+        "title": "Well hello",
+        "body": "I'm Hayley",
+        "user_id": 3
+    }
+]

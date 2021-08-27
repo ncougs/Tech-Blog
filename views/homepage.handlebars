@@ -1,0 +1,15 @@
+{{#each posts}}
+    <div class="card text-center my-3">
+        <div class="card-header">
+            {{this.user_id}}
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">{{this.title}}</h5>
+            <p class="card-text">{{this.body}}</p>
+            <a href="#" class="btn btn-primary">Comment</a>
+        </div>
+        <div class="card-footer text-muted">
+            {{this.post_date}}
+        </div>
+    </div>
+{{/each}}
