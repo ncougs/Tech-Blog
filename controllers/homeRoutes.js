@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const { Post, User } = require('../models');
+const checkAutenticiation = require('../utils/checkAuthentication')
 // const withAuth = require('../utils/auth');
 
-router.get('/', async (req, res) => {
+router.get('/', checkAutenticiation, async (req, res) => {
 
     //get all posts
     const postsRaw = await Post.findAll();
@@ -19,7 +20,7 @@ router.get('/signup', async (req, res) => {
     res.render('signup');
 });
 
-router.get('/dashboard', async (req, res) => {
+router.get('/dashboard', checkAutenticiation, async (req, res) => {
     //get current users posts
     const postsRaw = await Post.findAll({ where: { user_id: req.session.user_id } });
     const posts = postsRaw.map(post => post.get({ plain: true }))
