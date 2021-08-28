@@ -19,4 +19,11 @@ router.get('/signup', async (req, res) => {
     res.render('signup');
 });
 
+router.get('/dashboard', async (req, res) => {
+    //get current users posts
+    const postsRaw = await Post.findAll({ where: { user_id: req.session.user_id } });
+    const posts = postsRaw.map(post => post.get({ plain: true }))
+    res.render('dashboard', { posts });
+});
+
 module.exports = router;
