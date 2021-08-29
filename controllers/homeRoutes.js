@@ -6,7 +6,7 @@ const checkAutenticiation = require('../utils/checkAuthentication')
 router.get('/', checkAutenticiation, async (req, res) => {
 
     //get all posts
-    const postsRaw = await Post.findAll();
+    const postsRaw = await Post.findAll({ order: [['post_date', 'DESC']] });
     const posts = postsRaw.map(post => post.get({ plain: true }))
 
     res.render('homepage', { posts, logged_in: req.session.logged_in });
@@ -22,7 +22,7 @@ router.get('/signup', async (req, res) => {
 
 router.get('/dashboard', checkAutenticiation, async (req, res) => {
     //get current users posts
-    const postsRaw = await Post.findAll({ where: { user_id: req.session.user_id } });
+    const postsRaw = await Post.findAll({ where: { user_id: req.session.user_id }, order: [['post_date', 'DESC']] });
     const posts = postsRaw.map(post => post.get({ plain: true }))
     res.render('dashboard', { posts, logged_in: req.session.logged_in });
 });
@@ -44,10 +44,8 @@ router.get('/comments/:postID', checkAutenticiation, async (req, res) => {
     const post = postRaw.get({ plain: true });
 
     //get current posts comments
-    const commentsRaw = await Comment.findAll({ where: { post_id: postID } });
+    const commentsRaw = await Comment.findAll({ where: { post_id: postID }, order: [['comment_date', 'DESC']] });
     const comment = commentsRaw.map(comment => comment.get({ plain: true }))
-
-    console.log(comment);
 
     res.render('comments', { comment, post, logged_in: req.session.logged_in } );
 });
