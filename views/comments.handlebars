@@ -10,14 +10,14 @@
         <a href="/add-comment/{{post.id}}" class="btn btn-primary comment" data-postId="{{post.id}}">Comment</a>
     </div>
     <div class="card-footer text-muted">
-        {{this.post_date}}
+        {{formatDate post.post_date}}
     </div>
 </div>
 
 {{#each comment}}
 <div class="card">
     <div class="card-header">
-    {{this.comment_date}}
+    {{formatDate this.comment_date}}
     </div>
     <div class="card-body">
     <blockquote class="blockquote mb-0">

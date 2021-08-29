@@ -9,7 +9,7 @@
             <a href="/comments/{{this.id}}" class="btn btn-primary comment-link" data-postId="{{this.id}}">View Comments</a>
         </div>
         <div class="card-footer text-muted">
-            {{this.post_date}}
+            {{formatDate this.post_date}}
         </div>
     </div>
 {{/each}}
