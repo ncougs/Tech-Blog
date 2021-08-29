@@ -2,12 +2,12 @@
 
 <div class="card text-center my-3">
     <div class="card-header">
-        {{post.user_id}}
+        {{post.user.first_name}} {{post.user.last_name}}
     </div>
     <div class="card-body">
         <h5 class="card-title">{{post.title}}</h5>
         <p class="card-text">{{post.body}}</p>
-        <a href="/add-comment/{{post.id}}" class="btn btn-primary comment" data-postId="{{this.id}}">Comment</a>
+        <a href="/add-comment/{{post.id}}" class="btn btn-primary comment" data-postId="{{post.id}}">Comment</a>
     </div>
     <div class="card-footer text-muted">
         {{this.post_date}}
@@ -22,7 +22,7 @@
     <div class="card-body">
     <blockquote class="blockquote mb-0">
     <p>{{this.comment_text}}</p>
-    <footer class="blockquote-footer">{{this.user_id}}</footer>
+    <footer class="blockquote-footer">{{this.user.first_name}} {{this.user.last_name}}</footer>
     </blockquote>
     </div>
 </div>
