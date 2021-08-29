@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post, User } = require('../models');
+const { Post, User, Comment } = require('../models');
 const checkAutenticiation = require('../utils/checkAuthentication')
 // const withAuth = require('../utils/auth');
 
@@ -29,6 +29,27 @@ router.get('/dashboard', checkAutenticiation, async (req, res) => {
 
 router.get('/post', checkAutenticiation, async (req, res) => {
     res.render('post', { logged_in: req.session.logged_in } );
+});
+
+router.get('/add-comment/:postID', checkAutenticiation, async (req, res) => {
+    const { postID } = req.params;
+    res.render('add-comment', { postID, logged_in: req.session.logged_in } );
+});
+
+router.get('/comments/:postID', checkAutenticiation, async (req, res) => {
+    const { postID } = req.params;
+
+    //get current post
+    const postRaw = await Post.findOne({ where: { id: postID } });
+    const post = postRaw.get({ plain: true });
+
+    //get current posts comments
+    const commentsRaw = await Comment.findAll({ where: { post_id: postID } });
+    const comment = commentsRaw.map(comment => comment.get({ plain: true }))
+
+    console.log(comment);
+
+    res.render('comments', { comment, post, logged_in: req.session.logged_in } );
 });
 
 module.exports = router;

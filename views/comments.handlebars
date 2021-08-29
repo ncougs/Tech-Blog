@@ -1,0 +1,31 @@
+<p class="h3">View Comments</p>
+
+<div class="card text-center my-3">
+    <div class="card-header">
+        {{post.user_id}}
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">{{post.title}}</h5>
+        <p class="card-text">{{post.body}}</p>
+        <a href="/add-comment/{{post.id}}" class="btn btn-primary comment" data-postId="{{this.id}}">Comment</a>
+    </div>
+    <div class="card-footer text-muted">
+        {{this.post_date}}
+    </div>
+</div>
+
+{{#each comment}}
+<div class="card">
+    <div class="card-header">
+    {{this.comment_date}}
+    </div>
+    <div class="card-body">
+    <blockquote class="blockquote mb-0">
+    <p>{{this.comment_text}}</p>
+    <footer class="blockquote-footer">{{this.user_id}}</footer>
+    </blockquote>
+    </div>
+</div>
+{{/each}}
+
+<script src="../js/comment.js"></script>

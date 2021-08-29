@@ -1,0 +1,22 @@
+[
+    {
+        "comment_text": "Wow nice post",
+        "user_id": 1,
+        "post_id": 1
+    },
+    {
+        "comment_text": "That is great!",
+        "user_id": 2,
+        "post_id": 1
+    },
+    {
+        "comment_text": "Way to go",
+        "user_id": 3,
+        "post_id": 1
+    },
+    {
+        "comment_text": "Great stuff, you are an inspiration",
+        "user_id": 4,
+        "post_id": 1
+    }
+]
