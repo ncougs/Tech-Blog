@@ -19,7 +19,8 @@ const sess = {
     maxAge: 900000,
   },
   resave: false,
-  saveUninitialized: true
+  saveUninitialized: true,
+  rolling: true
 };
 
 app.use(session(sess));
