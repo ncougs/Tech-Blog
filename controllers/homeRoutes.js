@@ -31,6 +31,17 @@ router.get('/post', checkAutenticiation, async (req, res) => {
     res.render('post', { logged_in: req.session.logged_in } );
 });
 
+router.get('/post/:postID', checkAutenticiation, async (req, res) => {
+
+    const { postID } = req.params;
+
+    const postRaw = await Post.findOne({ where: { id: postID } });
+    const post = postRaw.get({ plain: true });
+
+    res.render('edit-post', { post, logged_in: req.session.logged_in } );
+});
+
+
 router.get('/add-comment/:postID', checkAutenticiation, async (req, res) => {
     const { postID } = req.params;
     res.render('add-comment', { postID, logged_in: req.session.logged_in } );

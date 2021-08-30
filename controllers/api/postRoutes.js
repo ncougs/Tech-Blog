@@ -1,6 +1,17 @@
 const router = require('express').Router();
 const { Post } = require('../../models');
 
+router.get('/', async (req, res) => {
+  try {
+
+      const posts = await Post.findAll();
+      res.status(200).json(posts);
+  }
+  catch (err) {
+    res.status(400).json(err);
+  }
+});
+
 router.post('/', async (req, res) => {
     try {
 
@@ -16,12 +27,55 @@ router.post('/', async (req, res) => {
 
         const newPost = await Post.create(request);
 
-        res.send(200).json(newPost);
+        res.status(200).json(newPost);
 
     }
     catch (err) {
       res.status(400).json(err);
     }
-  });
+});
+
+router.put('/:postID', async (req, res) => {
+  try {
+
+      const { postID } = req.params;
+
+      const { title, body } = req.body;
+
+      const request = {
+          title: title,
+          body: body
+      };
+
+      const updatePost = await Post.update(request, {
+        where: {
+          id: postID
+        }
+      });
+
+      res.status(200).json(updatePost);
+
+  }
+  catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+router.delete('/:postID', async (req, res) => {
+  try {
+
+      const { postID } = req.params;
+
+      const deletePost = await Post.destroy({where: {id: postID}} );
+      
+      console.log(deletePost);
+
+      res.status(200).json(deletePost);
+
+  }
+  catch (err) {
+    res.status(400).json(err);
+  }
+});
 
 module.exports = router;

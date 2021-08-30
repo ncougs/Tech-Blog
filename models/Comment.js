@@ -16,10 +16,12 @@ Comment.init(
       allowNull: false,
     },
     user_id: {
-        type: DataTypes.INTEGER
+        type: DataTypes.INTEGER,
+        allowNull: true
     },
     post_id: {
-        type: DataTypes.INTEGER
+        type: DataTypes.INTEGER,
+        allowNull: true
     },
     comment_date: {
       type: DataTypes.DATE,

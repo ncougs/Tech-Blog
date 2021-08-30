@@ -4,7 +4,7 @@ const Comment = require('./Comment');
 
 //A user can have many posts
 User.hasMany(Post, {
-  foreignKey: 'user_id'
+  foreignKey: 'user_id'  
 });
 
 //A post belongs to one user
@@ -20,7 +20,7 @@ Comment.belongsTo(Post, {
 //A post can have many comments
 Post.hasMany(Comment, {
     foreignKey: 'post_id'
-  });
+});
 
 //A user can have many comments
 User.hasMany(Comment, {

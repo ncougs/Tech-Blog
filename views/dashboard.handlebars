@@ -1,3 +1,5 @@
+<p class="h3">Your Posts</p>
+
 {{#each posts}}
     <div class="card text-center my-3">
         <div class="card-header">
@@ -6,6 +8,7 @@
         <div class="card-body">
             <h5 class="card-title">{{this.title}}</h5>
             <p class="card-text">{{this.body}}</p>
+            <a href="/post/{{this.id}}" class="btn btn-primary comment-link" data-postId="{{this.id}}">Edit Post</a>
             <a href="/comments/{{this.id}}" class="btn btn-primary comment-link" data-postId="{{this.id}}">View Comments</a>
         </div>
         <div class="card-footer text-muted">
