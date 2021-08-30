@@ -3,10 +3,10 @@ require('dotenv').config();
 
 let sequelize;
 
-if(process.env.DATABASE_URL) {
+if(process.env.CLEARDB_DATABASE_UR) {
   sequelize = new Sequelize(
-    process.env.DATABASE_URL, {
-    dialect: 'postgres'
+    process.env.CLEARDB_DATABASE_URL, {
+    dialect: 'mysql'
 })
 } else {
   sequelize = new Sequelize(
