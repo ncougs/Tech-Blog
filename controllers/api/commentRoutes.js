@@ -18,7 +18,7 @@ router.post('/:postID', async (req, res) => {
 
         const newComment = await Comment.create(request);
 
-        res.send(200).json(newComment);
+        res.status(200).json(newComment);
 
     }
     catch (err) {
