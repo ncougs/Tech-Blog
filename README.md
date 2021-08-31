@@ -14,6 +14,20 @@ This applications will allow developers to publish their blog posts and comment 
 
 ## Application Functionalitity and Apperance
 
+![image](https://user-images.githubusercontent.com/84214872/131429997-95d045e7-4ae6-4ce9-a5c7-516c942a9a3a.png)
+
+![image](https://user-images.githubusercontent.com/84214872/131430049-bad100ec-538a-45e8-8329-cf761714994e.png)
+
+![image](https://user-images.githubusercontent.com/84214872/131430156-7dbf9d59-cff6-41e8-bab1-0675d560e25b.png)
+
+![image](https://user-images.githubusercontent.com/84214872/131430181-b02e5b0a-216f-4d06-995d-6ebc50c252c4.png)
+
+![image](https://user-images.githubusercontent.com/84214872/131430193-4e4a6423-3fa2-41de-89b2-d042d7dd5caa.png)
+
+![image](https://user-images.githubusercontent.com/84214872/131430213-d0272b14-8860-4847-803a-6214192b235f.png)
+
+![image](https://user-images.githubusercontent.com/84214872/131430235-e76eb7ca-a3a4-4971-acb8-84098424b2c0.png)
+
 
 ## Questions
 
